@@ -32,6 +32,32 @@ El servidor se inicializa con:
 - **Tipo**: Personal Access Token (PAT).
 - **Variable de entorno**: `GITHUB_TOKEN`.
 
+Configuración global del servidor MCP en Cursor:
+
+- Archivo de configuración **global** de MCPs en Cursor: `~/.cursor/mcp.json`.
+- Ejemplo de entrada para este servidor (válido para cualquier proyecto en Cursor):
+
+```json
+{
+  "mcpServers": {
+    "github-local": {
+      "command": "node",
+      "args": [
+        "/ruta/completa/a/github-mcp-local/index.js"
+      ],
+      "env": {
+        "GITHUB_TOKEN": "TU_TOKEN_PERSONAL"
+      }
+    }
+  }
+}
+```
+
+- El archivo `~/.cursor/mcp.json` es **único y global**:
+  - Puede contener varios servidores MCP bajo la clave `mcpServers`.
+  - Cada clave (por ejemplo `github-local`) define un servidor disponible en **todos** tus proyectos en Cursor.
+  - La edición puede hacerse con cualquier editor de texto (`nano`, `vim`, VSCode, etc.); el proyecto no depende de `nano`, solo del contenido JSON.
+
 Requisitos de permisos del token:
 
 - Para repos públicos solamente: mínimo `public_repo`.

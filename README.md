@@ -65,6 +65,9 @@ Para detenerlo, usa `Ctrl + C`.
 
 ## Configuración en Cursor como MCP
 
+Cursor usa un archivo **global** `~/.cursor/mcp.json` para registrar servidores MCP accesibles desde **cualquier proyecto**.  
+Puedes editarlo con `nano`, `vim`, VSCode o el editor que prefieras; lo importante es el contenido JSON, no la herramienta.
+
 Edita (o crea) el archivo `~/.cursor/mcp.json` y añade una entrada para este servidor:
 
 ```json
@@ -85,8 +88,9 @@ Edita (o crea) el archivo `~/.cursor/mcp.json` y añade una entrada para este se
 
 Puntos importantes:
 
-- Ajusta la ruta de `index.js` según la ubicación real del proyecto.
+- Ajusta la ruta de `index.js` según la ubicación real del proyecto (por ejemplo, si no está en `/home/servidor/Descargas/github-mcp-local/index.js`).
 - Puedes dejar `GITHUB_TOKEN` fijo en `env` o confiar en las variables de entorno del sistema (elimina `env` si ya lo exportas globalmente).
+- Este archivo `~/.cursor/mcp.json` es **único y compartido** para todos tus proyectos en Cursor; en `mcpServers` puedes definir varios servidores (por ejemplo, `github-local`, `postgres-local`, etc.).
 - Tras guardar, **reinicia Cursor** o recarga los MCPs para que detecte el nuevo servidor.
 
 En Cursor, verás un servidor MCP llamado **`github-local`**.  
