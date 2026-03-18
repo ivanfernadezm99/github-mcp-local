@@ -1,14 +1,15 @@
 {
   "name": "github-mcp-local",
   "version": "1.0.0",
-  "description": "",
+  "description": "Servidor MCP local para GitHub usando token personal",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.27.1",
     "axios": "^1.13.6"
